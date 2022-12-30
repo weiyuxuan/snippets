@@ -1,0 +1,21 @@
+{
+  "name": "snippets",
+  "version": "0.0.1",
+  "description": "Commonly used frontend code snippets.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/weiyuxuan/snippets.git"
+  },
+  "author": "weiyuxuan",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+
+  },
+  "bugs": {
+    "url": "https://github.com/weiyuxuan/snippets/issues"
+  },
+  "homepage": "https://github.com/weiyuxuan/snippets#readme"
+}
