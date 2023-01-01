@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "commonjs",
+    "lib": ["DOM", "ESNext"],
+    "rootDir": "src",
+    "outDir": "dist",
+    "jsx": "react",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "declaration": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true
+  },
+  "include": [
+    "src"
+  ]
+}
