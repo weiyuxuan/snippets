@@ -1,0 +1,22 @@
+{
+  "name": "snippets-typescript",
+  "version": "0.0.1",
+  "description": "Commonly used typescript code snippets.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/weiyuxuan/snippets.git"
+  },
+  "author": "weiyuxuan",
+  "private": true,
+  "scripts": {
+    "compile": "tsc"
+  },
+  "bugs": {
+    "url": "https://github.com/weiyuxuan/snippets/issues"
+  },
+  "homepage": "https://github.com/weiyuxuan/snippets#readme",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

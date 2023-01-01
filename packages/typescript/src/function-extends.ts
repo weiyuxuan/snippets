@@ -3,18 +3,18 @@
 // and whether the return value type follows type covariance.
 
 class Animal {
-  asPet() {}
+  asPet () {}
 }
 
 class Dog extends Animal {
-  bark() {}
+  bark () {}
 }
 
 class Corgi extends Dog {
-  cute() {}
+  cute () {}
 }
 
-function fn(dog: Dog) {
+function fn (dog: Dog) {
   dog.bark();
   return dog;
 }
@@ -31,21 +31,19 @@ type CorgiToCorgi = (corgi: Corgi) => Corgi;
 
 // Dog is a subtype of Animal, but Dog -> T is not a subtype of Animal -> T,
 // cause the parameter type follows type contravariance.
-
-let animalToAnimalFunc: AnimalToAnimal = fn;
-let animalToDogFunc: AnimalToDog = fn;
-let animalToCorgiFunc: AnimalToCorgi = fn;
+// const animalToAnimalFunc: AnimalToAnimal = fn;
+// const animalToDogFunc: AnimalToDog = fn;
+// const animalToCorgiFunc: AnimalToCorgi = fn;
 
 // Corgi is a subtype of Dog, but T -> Dog is not a subtype of T -> Corgi,
 // cause the return value type follows type covariance.
+// const dogToCorgiFunc: DogToCorgi = fn;
+// const corgiToCorgiFunc: CorgiToCorgi = fn;
 
-let dogToCorgiFunc: DogToCorgi = fn;
-let corgiToCorgiFunc: CorgiToCorgi = fn;
+const dogToAnimalFunc: DogToAnimal = fn;
+const dogToDogFunc: DogToDog = fn;
 
-let dogToAnimalFunc: DogToAnimal = fn;
-let dogToDogFunc: DogToDog = fn;
-
-let corgiToAnimalFunc: CorgiToAnimal = fn;
-let corgiToDogFunc: CorgiToDog = fn;
+const corgiToAnimalFunc: CorgiToAnimal = fn;
+const corgiToDogFunc: CorgiToDog = fn;
 
 export {};

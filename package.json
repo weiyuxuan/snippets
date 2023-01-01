@@ -12,10 +12,26 @@
     "packages/*"
   ],
   "scripts": {
-
+    "lint": "eslint -c .eslintrc --ext .ts,.tsx,.js,.jsx ./ --fix"
   },
   "bugs": {
     "url": "https://github.com/weiyuxuan/snippets/issues"
   },
-  "homepage": "https://github.com/weiyuxuan/snippets#readme"
+  "homepage": "https://github.com/weiyuxuan/snippets#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.46.1",
+    "@typescript-eslint/parser": "^5.46.1",
+    "eslint": "^8.29.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-config-standard-jsx": "^11.0.0",
+    "eslint-config-standard-react": "^12.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-n": "^15.6.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.31.11",
+    "eslint-webpack-plugin": "^3.1.1",
+    "tsc": "^2.0.4",
+    "typescript": "^4.9.4"
+  }
 }
