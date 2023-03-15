@@ -17,7 +17,8 @@
   "homepage": "https://github.com/weiyuxuan/snippets#readme",
   "dependencies": {
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "typescript": "^4.9.5"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",
