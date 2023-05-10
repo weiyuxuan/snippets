@@ -2,5 +2,6 @@
 
 Commonly used frontend code snippets.
 
-- TypeScript
-- Polyfill
+- [TypeScript](./src/typescript/)
+- [Polyfill](./src/polyfill/)
+- [Algorithm](./src/algorithm/)
