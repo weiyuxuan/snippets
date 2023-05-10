@@ -10,7 +10,6 @@ node_modules
 
 # production
 /dist
-/packages/*/dist
 
 # misc
 .DS_Store
