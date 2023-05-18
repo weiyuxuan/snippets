@@ -1,4 +1,4 @@
-class LetterTree {
+class DictTree {
   constructor () {
     this.tree = {
       value: '',
@@ -56,3 +56,13 @@ class LetterTree {
     return result;
   }
 }
+
+const words = ['preference', 'present', 'pressure', 'preview', 'premium', 'statement', 'statistics', 'stabilize', 'stereotype', 'stethoscope', 'internship', 'interview', 'intersection', 'intermediate', 'interpretation', 'relationship', 'relaxation', 'religious', 'remarkable', 'remember'];
+
+const dict = new DictTree();
+
+for (const word of words) {
+  dict.insert(word);
+}
+
+console.log(dict.search('pre'));
