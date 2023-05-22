@@ -13,13 +13,20 @@ function debounce (fn, delay) {
 
 function throttle (fn, delay) {
   let canRun = true;
-
-  return function (...args) {
-    if (!canRun) return;
+  let savedArgs;
+  return function newFn (...args) {
+    if (!canRun) {
+      savedArgs = args;
+      return;
+    }
     canRun = false;
+    fn(...args);
     setTimeout(() => {
-      fn.call(this, ...args);
       canRun = true;
+      if (savedArgs) {
+        newFn(...savedArgs);
+        savedArgs = null;
+      }
     }, delay);
   };
 }
