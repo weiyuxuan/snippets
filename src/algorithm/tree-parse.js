@@ -1,4 +1,6 @@
-function preOrderUnRecur (node) {
+// preOrderTraversal and levelOrderTraversal
+
+function preOrderTraversal (node) {
   if (!node) {
     throw new Error('Empty Tree');
   }

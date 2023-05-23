@@ -1,3 +1,5 @@
+// simple quick sort
+
 function quickSort (arr) {
   const pivot = arr[0];
   const left = [];

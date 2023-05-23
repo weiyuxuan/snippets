@@ -1,3 +1,5 @@
+// store huge size string data by dict-tree
+
 class DictTree {
   constructor () {
     this.tree = {

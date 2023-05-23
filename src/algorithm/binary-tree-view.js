@@ -1,3 +1,5 @@
+// get binary-tree value array from left view or top view
+
 class Tree {
   constructor (value, leftNode, rightNode) {
     this.value = value;
@@ -38,30 +40,30 @@ function binaryTreeLeftView (treeNode) {
 }
 
 function binaryTreeTopView (treeNode) {
-  const result = [];
-  let maxLeftWidth = 0;
-  let maxRightWidth = 0;
+  const result = [{ ...treeNode, offset: 0 }];
+  let minOffset = 0;
+  let maxOffset = 0;
 
-  const queue = [{ ...treeNode, leftWidth: 1, rightWidth: 1 }];
+  const queue = [{ ...treeNode, offset: 0 }];
 
   while (queue.length > 0) {
     const currentNode = queue.shift();
-    if (currentNode.leftWidth > maxLeftWidth) {
-      result.push({ value: currentNode.value, leftWidth: currentNode.leftWidth });
-      maxLeftWidth = currentNode.leftWidth;
-    } else if (currentNode.rightWidth > maxRightWidth) {
-      result.push({ value: currentNode.value, leftWidth: currentNode.leftWidth });
-      maxRightWidth = currentNode.rightWidth;
+    if (currentNode.offset > maxOffset) {
+      result.push(currentNode);
+      maxOffset = currentNode.offset;
+    } else if (currentNode.offset < minOffset) {
+      result.push(currentNode);
+      minOffset = currentNode.offset;
     }
     if (currentNode.left) {
-      queue.push({ ...currentNode.left, leftWidth: currentNode.leftWidth + 1, rightWidth: currentNode.rightWidth - 1 });
+      queue.push({ ...currentNode.left, offset: currentNode.offset + 1 });
     }
     if (currentNode.right) {
-      queue.push({ ...currentNode.right, leftWidth: currentNode.leftWidth - 1, rightWidth: currentNode.rightWidth + 1 });
+      queue.push({ ...currentNode.right, offset: currentNode.offset - 1 });
     }
   }
 
-  return result.sort((a, b) => b.leftWidth - a.leftWidth).map((item) => item.value);
+  return result.sort((a, b) => b.offset - a.offset).map((item) => item.value);
 }
 
 const tree7 = new Tree(7);

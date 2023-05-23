@@ -1,3 +1,5 @@
+// least recently used cache
+
 class LRUCache {
   constructor (length) {
     this.length = length;
@@ -9,10 +11,10 @@ class LRUCache {
     if (index > -1) {
       this.data.splice(index, 1);
     }
+    this.data.push({ key, value });
     if (this.data.length === this.length) {
       this.data.shift();
     }
-    this.data.push({ key, value });
   }
 
   get (key) {
@@ -20,9 +22,9 @@ class LRUCache {
     if (index < 0) {
       return null;
     }
-    const data = this.data[index];
+    const result = this.data[index];
     this.data.splice(index, 1);
-    this.data.push(data);
-    return data;
+    this.data.push(result);
+    return result;
   }
 }
